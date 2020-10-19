@@ -26,9 +26,10 @@ ENDIF()
 # generate JNIparasail.h stub
 ADD_CUSTOM_COMMAND(
     OUTPUT parasail_JNIparasail.h
-    COMMAND ${Java_JAVAH_EXECUTABLE} -verbose
+    COMMAND ${Java_JAVAC_EXECUTABLE} -verbose 
+        -h jni
         -classpath parasail.jar
-        -jni parasail.JNIparasail
+        parasail.JNIparasail
     MAIN_DEPENDENCY parasail.jar
 )
 
